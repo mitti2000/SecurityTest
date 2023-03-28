@@ -9,16 +9,16 @@ public class TestClass
 {
     public void ComplexMethod()
     {
-        string password = "password123";
+        string password = "password1234";
         var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
         XmlConfigurator.Configure(logRepository, new FileInfo("log4netconfig.config"));
 
-        if (password == "password123")
+        if (password == "password1234")
         {
             Console.WriteLine("password is correct");
         }
 
-        if (5 == 5)
+        if (5 == password.Length)
         {
             List<Char> charArray = "this is a test".ToList();
             foreach (Char c in charArray)
