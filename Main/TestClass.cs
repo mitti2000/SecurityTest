@@ -9,6 +9,7 @@ public class TestClass
 {
     public void ComplexMethod()
     {
+        var someChange = 5;
         string password = "password1234";
         var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
         XmlConfigurator.Configure(logRepository, new FileInfo("log4netconfig.config"));
