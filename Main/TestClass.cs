@@ -9,8 +9,14 @@ public class TestClass
 {
     public void ComplexMethod()
     {
+        string password = "password123";
         var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
         XmlConfigurator.Configure(logRepository, new FileInfo("log4netconfig.config"));
+
+        if (password == "password123")
+        {
+            Console.WriteLine("password is correct");
+        }
 
         if (5 == 5)
         {
