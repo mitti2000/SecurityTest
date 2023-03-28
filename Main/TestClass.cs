@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Net;
+using System.Reflection;
 using log4net;
 using log4net.Config;
 using log4net.Repository.Hierarchy;
@@ -9,6 +10,11 @@ public class TestClass
 {
     public void ComplexMethod()
     {
+        HttpWebRequest webRequest = WebRequest.CreateHttp("https://www.test.com");
+
+
+        webRequest.ServerCertificateValidationCallback += (sender, certificate, chain, errors) => true;
+
         var someChange = 5;
         string password = "password1234";
         var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
